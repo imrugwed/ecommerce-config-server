@@ -18,9 +18,9 @@ spring:
             
               args:
                 authenticationEnabled: true
-            - name: Authorization
-              args:
-                allowedRoles: USER,ADMIN,SUPER_ADMIN
+            # - name: Authorization
+            #   args:
+            #     allowedRoles: USER,ADMIN,SUPER_ADMIN
         - id: inventory-service
           uri: lb://INVENTORY-SERVICE
           predicates:
@@ -31,9 +31,9 @@ spring:
             - name: Authentication
               args:
                 authenticationEnabled: true
-            - name: Authorization
-              args:
-                allowedRoles: ADMIN,SUPER_ADMIN
+            # - name: Authorization
+            #   args:
+            #     allowedRoles: ADMIN,SUPER_ADMIN
 eureka:
   client:
     service-url:
