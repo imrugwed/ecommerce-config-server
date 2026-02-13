@@ -13,7 +13,9 @@ spring:
             - StripPrefix=2
 #            - RedirectTo=302, http://codingshuttle.com
             - name: LoggingOrdersFilter
-            - name: Authentication
+            # - name: Authentication #the actual class name is AuthenticationGatewayFilterFactory, but postfix GatewayFilter factory we simply use Authentication and system will intercept.
+            - name: AuthenticationGatewayFilterFactory
+            
               args:
                 authenticationEnabled: true
             - name: Authorization
