@@ -1,8 +1,8 @@
 #eureka config
 # eureka.client.service-url.defaultZone: http://localhost:8761/eureka
-eureka.client.service-url.defaultZone: http://discovery-service:8761
+#eureka.client.service-url.defaultZone: http://discovery-service:8761
 
-eureka.instance.prefer-ip-address: true
+#eureka.instance.prefer-ip-address: true
 
 management:
   endpoints:
@@ -12,3 +12,15 @@ management:
 management.tracing.sampling.probability: 1.0
 #spring.zipkin.baseUrl: http://localhost:9411
 spring.zipkin.baseUrl: http://zipkin:9411
+
+eureka:
+   client:
+     service-url:
+       defaultZone: http://discovery-service:8761/eureka #URL of the Eureka Server where the client should register
+     fetch-registry: true  #(usually true for clients)
+     register-with-eureka: true #(usually true for clients)
+   instance:
+     prefer-ip-address: false #User IP instead of hostname for registration(useful for containers)
+     lease-removal-interval-in-seconds: 10 #(default is 30)
+     lease-expiration-duration-in-seconds: 30 #(default is 90)
+
