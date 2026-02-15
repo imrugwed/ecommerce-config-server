@@ -34,10 +34,10 @@ spring:
             # - name: Authorization
             #   args:
             #     allowedRoles: ADMIN,SUPER_ADMIN
-eureka:
-  client:
-    service-url:
-      defaultZone: http://discovery-service:8761/eureka
+#eureka:
+#  client:
+ #   service-url:
+ #     defaultZone: http://discovery-service:8761/eureka
 
 jwt:
   secretKey: sjdkgdfjvbduvsiushvugbjfbuyfbfuydbfuidshfbijsgkjkjfdngbds
